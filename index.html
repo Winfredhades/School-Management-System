@@ -20,16 +20,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav">
                 <li class="nav-item">
-                  <a class="nav-link active text-bg-light" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                  <a class="nav-link active text-bg-light" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-bg-light" href="#">Classes</a>
+                  <a class="nav-link text-bg-light" href="#" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#classes" type="button" role="tab" aria-controls="classes" aria-selected="false">Classes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-bg-light" href="#">Teachers</a>
+                  <a class="nav-link text-bg-light" href="#" id="nav-teachers-tab" data-bs-toggle="tab" data-bs-target="#teachers" type="button" role="tab" aria-controls="Teachers" aria-selected="false">Teachers</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-bg-light" href="#">Students</a>
+                  <a class="nav-link text-bg-light" href="#" id="nav-students-tab" data-bs-toggle="tab" data-bs-target="#students" type="button" role="tab" aria-controls="students" aria-selected="false">Students</a>
                 </li>
               </ul>
           </div>
@@ -42,17 +42,37 @@
       <div class="row" style="height: 40rem;">
           <!-- Home tab pane start-->
           <div class="tab-content col" id="nav-tabContent">
+            <!-- Home Tab Start-->
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="nav-home-tab">
             <h1>Welcome to LMS</h1>
           </div>
+          <!-- Home Tab End-->
+          <!-- Classes Tab Pane Start-->
+          <div class="tab-pane fade" id="classes" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <h1>Here Is Classes Section</h1>
+
+          </div>
+          <!-- Classes Tab Pane End-->
+          <!-- Teachers Tab Pane Start-->
+          <div class="tab-pane fade" id="teachers" role="tabpanel" aria-labelledby="nav-techers-tab">
+            <h1>Here Is Teachers Section</h1>
+
+          </div>
+          <!-- Teachers Tab Pane End-->
+          <!-- Students Tab Pane Start-->
+          <div class="tab-pane fade" id="students" role="tabpanel" aria-labelledby="nav-students-tab">
+            <h1>Here Is Students Section</h1>
+
+          </div>
+          <!-- Students Tab Pane End-->
       </div>
     </div>
   </div>
     <!-- Tab Content End -->
     <!-- Footer Start -->
     <hr>
-    <div class="container bg-info">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 bg-dark-subtle">
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
         <p class="col-md-4 mb-0 text-body-secondary">© 2023 Company, Inc</p>
     
         <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
