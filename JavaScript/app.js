@@ -6,8 +6,9 @@ const studentDataRenderer = () => {
     const studentInfo = document.getElementsByClassName('studentAdd');
     const studentData = {
         name: studentInfo[0].value,
-        course: studentInfo[1].value,
-        message: studentInfo[2].value,
+        surName: studentInfo[1].value,
+        course: studentInfo[2].value,
+        message: studentInfo[3].value,
         };
         localStorage.setItem("studdentInfo", JSON.stringify(studentData));
 }
@@ -24,19 +25,21 @@ const getDataFromLocalStorage = () => {
 
 const cardCreator = () => {
     const card = document.getElementById('studentCartPart');
-    const studentInfo = getDataFromLocalStorage();
-    const studentCardText = `
+    students.forEach(student => {
+      const studentCardText = `
     <div class="card" style="width: 18rem;">
     <div class="card-body text-start">
-      <h5 class="card-title">${studentInfo.name}</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">${studentInfo.course}</h6><br>
-      <p class="card-text">${studentInfo.message}</p> <br>
-      <p class="text-primary">Average Grade: </p>  
+      <h5 class="card-title">${student.name} ${student.surName}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">${student.course}</h6><br>
+      <p class="card-text">${student.message}</p><br>
+      <p class="text-primary">Average Grade:</p>  
     </div>
-  </div>`
-  card.innerHTML = studentCardText;
-
+  </div>`;
+  card.innerHTML += studentCardText;
+    })
 }
+
+
 
 const saveBtn = document.getElementById('studentSaveBtn');
 
@@ -46,11 +49,4 @@ saveBtn.addEventListener("click", function() {
    cardCreator()
    localStorage.clear()
 })
-
-
-
-
-
-
-
 
