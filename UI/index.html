@@ -46,7 +46,7 @@
     <!-- Navbar End -->
     <!-- Tab Content Start -->
     <div class="container">
-      <div class="row" style="height: 40rem;">
+      <div class="row" style="min-height: 48rem;">
           <div class="tab-content col" id="nav-tabContent">
             <!-- Home Tab Start-->
           <div class="tab-pane fade text-center m-5 show active" id="home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -159,31 +159,6 @@
             <h1 class="m-5 text-start">Students</h1>
             <!-- Card Part Start-->
             <div class="row row-cols-1 row-cols-md-3 mt-5 justify-content-between" id="studentCartPart">
-              <!-- First card start-->
-              
-              <!-- First Cart End-->
-              <!-- Second Cart Start-->
-              <!-- <div class="card" style="width: 18rem;">
-                <div class="card-body text-start">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">Subtitle</h6><br>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <br>
-                  <p class="text-primary">Average Grade: </p>
-                </div>
-              </div> -->
-              
-              <!-- Second Cart End -->
-              <!-- Third Cart Start -->
-              <!-- <div class="card" style="width: 18rem;">
-                <div class="card-body text-start">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">Subtitle</h6><br>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <br>
-                  <p class="text-primary">Average Grade: </p>
-                </div>
-              </div>
-            -->
-              <!-- Third Cart End -->
             </div>
             <!-- Card Part End -->
             <div class="text-center mt-4">
@@ -212,13 +187,19 @@
                           </div>
   
                           <div class="input-group mb-3 mt-3">
-                            <input type="text" value="" class="form-control studentAdd" placeholder="Student Profession" aria-label="Teacher Proffession" aria-describedby="button-addon2">
+                            <span class="input-group-text">Department of Student</span>
+                            <input type="text" value="" class="form-control studentAdd" placeholder="Department" aria-label="Teacher Proffession" aria-describedby="button-addon2">
                           </div>
-  
+                          <div class="input-group">
+                            <span class="input-group-text">Average Grade:</span>
+                            <input type="number" max="100" value="50" aria-label="Average Grade" class="form-control studentAdd" placeholder="Average Grade">
+                              
+                          </div>
                           <div class="mb-3">
                             <label for="message-text" class="col-form-label">Message:</label>
                             <textarea class="form-control studentAdd" id="message-text"></textarea>
                           </div>
+
                         </form>
                       </div>
                       <!-- Modal Body End -->

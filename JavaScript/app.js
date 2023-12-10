@@ -1,5 +1,7 @@
 import { students } from "../Data/studentData.js";
 
+//--------------------------- Student Card Creating Part Start -------------------------
+
 // set data to local storage
 
 const studentDataRenderer = () => {
@@ -8,35 +10,42 @@ const studentDataRenderer = () => {
         name: studentInfo[0].value,
         surName: studentInfo[1].value,
         course: studentInfo[2].value,
-        message: studentInfo[3].value,
+        grade: studentInfo[3].value,
+        message: studentInfo[4].value,
         };
-        localStorage.setItem("studdentInfo", JSON.stringify(studentData));
+        students.push(studentData);
+        localStorage.setItem("studdentInfo", JSON.stringify(students));
+
 }
 
 // get data from local storage
 
 const getDataFromLocalStorage = () => {
-    const studentData = JSON.parse(localStorage.getItem("studdentInfo"));
-    students.push(studentData);
-    return studentData;
+    let studentData = JSON.parse(localStorage.getItem("studdentInfo"));
+    console.log(studentData);
+    console.log(students);
+    if(studentData != null){
+      students.length = 0;
+      students.push(...studentData);
+    }
 }
 
 // Create New Cart;
 
-const cardCreator = () => {
+const showCards = () => {
+  console.log(students.length)
     const card = document.getElementById('studentCartPart');
-    students.forEach(student => {
-      const studentCardText = `
+    card.innerHTML = students.map(student => {
+      return `
     <div class="card" style="width: 18rem;">
     <div class="card-body text-start">
       <h5 class="card-title">${student.name} ${student.surName}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">${student.course}</h6><br>
       <p class="card-text">${student.message}</p><br>
-      <p class="text-primary">Average Grade:</p>  
+      <p class="text-primary">Average Grade: ${student.grade}</p>  
     </div>
   </div>`;
-  card.innerHTML += studentCardText;
-    })
+    }).join("")
 }
 
 
@@ -45,8 +54,22 @@ const saveBtn = document.getElementById('studentSaveBtn');
 
 saveBtn.addEventListener("click", function() {
    studentDataRenderer();
-   getDataFromLocalStorage();
-   cardCreator()
-   localStorage.clear()
+   showCards()
+  // localStorage.clear()
 })
 
+//--------------------- Student Cart Creating Part End ----------------------------
+
+//--------------------- Teacher Cart Creating Part Start --------------------------
+
+
+
+const studentTab = document.getElementById('nav-students-tab');
+
+studentTab.addEventListener("click", function () {
+  getDataFromLocalStorage();
+  showCards();
+} )
+
+
+// localStorage.clear()
