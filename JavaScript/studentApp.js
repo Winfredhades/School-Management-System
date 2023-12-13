@@ -1,6 +1,7 @@
 import { students } from "../Data/studentData.js";
+import { studentCardContentInHome } from "./homeTab.js";
 
-const studentDataRenderer = () => {
+export const studentDataRenderer = () => {
   const studentInfo = document.querySelectorAll('.studentAdd');
   const studentData = {
       name: studentInfo[0].value,
@@ -17,7 +18,7 @@ const studentDataRenderer = () => {
 
 // get data from local storage
 
-const getDataFromLocalStorage = () => {
+const getStudentDataFromLocalStorage = () => {
   let studentData = JSON.parse(localStorage.getItem("studdentInfo"));
   // console.log(studentData);
   // console.log(students);
@@ -29,9 +30,9 @@ const getDataFromLocalStorage = () => {
 
 // Create New Cart;
 
-// ... (previous code)
 
-const showCards = () => {
+
+export const showStudentCards = () => {
   const card = document.getElementById('studentCartPart');
   card.innerHTML = students.map((student, index) => {
     return `
@@ -58,40 +59,16 @@ const showCards = () => {
   });
 }
 
-// ... (rest of the code)
+export const saveStudentBtn = document.getElementById('studentSaveBtn');
 
+export const studentTab = document.getElementById('nav-students-tab');
 
-
-
-const saveBtn = document.getElementById('studentSaveBtn');
-
-saveBtn.addEventListener("click", function() {
- studentDataRenderer();
- showCards()
-// localStorage.clear()
-})
-
-//--------------------- Student Cart Creating Part End ----------------------------
-
-//--------------------- Teacher Cart Creating Part Start --------------------------
-
-
-
-const studentTab = document.getElementById('nav-students-tab');
-
-studentTab.addEventListener("click", function () {
-getDataFromLocalStorage();
-showCards();
-} );
-
-
-function deleteStudent(index) {
+export function deleteStudent(index) {
   students.splice(index, 1);
   localStorage.setItem("studdentInfo", JSON.stringify(students));
-  showCards();
+  showStudentCards();
+  studentCardContentInHome();
 }
 
-
-
-
-showCards();
+getStudentDataFromLocalStorage()
+showStudentCards();

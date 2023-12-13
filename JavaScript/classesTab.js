@@ -1,8 +1,8 @@
 import { classes } from "../Data/classData.js";
+import { classCardContentInHome } from "./homeTab.js";
+export const classSaveBtn = document.getElementById('classSaveBtn')
 
-const classSaveBtn = document.getElementById('classSaveBtn')
-
-const classDataRenderer = () => {
+export const classDataRenderer = () => {
   const classInfo = document.querySelectorAll('.classAdd');
   const classData = {
       className: classInfo[0].value,
@@ -17,7 +17,7 @@ const classDataRenderer = () => {
 
 // get data from local storage
 
-const getDataFromLocalStorage = () => {
+const getClassDataFromLocalStorage = () => {
   let classData = JSON.parse(localStorage.getItem("classInfoInfo"));
   // console.log(studentData);
   // console.log(students);
@@ -31,7 +31,7 @@ const getDataFromLocalStorage = () => {
 
 // ... (previous code)
 
-const showCards = () => {
+export const showClassCards = () => {
   const card = document.getElementById('classCardPart');
   card.innerHTML = classes.map((theClass, index) => {
        return `
@@ -56,16 +56,14 @@ const showCards = () => {
   });
  };
 
- function deleteClass(index) {
+ export function deleteClass(index) {
   classes.splice(index, 1);
   localStorage.setItem("classInfo", JSON.stringify(classes));
-  showCards();
+  showClassCards();
+  classCardContentInHome()
 }
   
-classSaveBtn.addEventListener("click", function() {
-  classDataRenderer();
-  showCards()
-})
 
 
-showCards();
+getClassDataFromLocalStorage()
+showClassCards();

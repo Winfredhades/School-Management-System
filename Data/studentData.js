@@ -12,7 +12,8 @@ const students = [
         course: "Web Programming",
         grade: 85,
         message: "Good Job!"
-    },{
+    },
+    {
         name: "Merve",
         surName: "TURAN",
         course: "Data Base Management Systems",

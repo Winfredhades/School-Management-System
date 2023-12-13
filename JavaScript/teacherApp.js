@@ -1,10 +1,10 @@
 import { teachers } from "../Data/teacherData.js";
+import { teacherCardContentInHome } from "./homeTab.js";
+
+export const teacherSaveBtn = document.getElementById('teacherSaveBtn');
 
 
-const teacherSaveBtn = document.getElementById('teacherSaveBtn');
-
-
-const teacherDataRenderer = () => {
+export const teacherDataRenderer = () => {
     const teacherInfo = document.querySelectorAll('.teacherAdd');
     const teacherData = {
         name: teacherInfo[0].value,
@@ -17,7 +17,7 @@ const teacherDataRenderer = () => {
        teacherInfo.forEach(inputEl => inputEl.value = "");
   }
 
-  const getDataFromLocalStorage = () => {
+   const getTeacherDataFromLocalStorage = () => {
     let teacherData = JSON.parse(localStorage.getItem("teacherInfo"));
     // console.log(studentData);
     // console.log(students);
@@ -27,7 +27,7 @@ const teacherDataRenderer = () => {
     }
   };
 
-  const showCards = () => {
+  export const showTeacherCards = () => {
     const teacherCard = document.getElementById('teacherCartPart');
     teacherCard.innerHTML = teachers.map((teacher, index) => {
       return `
@@ -56,13 +56,11 @@ const teacherDataRenderer = () => {
       })
     };
 
-    function deleteTeacher(index) {
+   export function deleteTeacher(index) {
         teachers.splice(index, 1);
         localStorage.setItem("teacherInfo", JSON.stringify(teachers));
-        showCards();
+        showTeacherCards();
+        teacherCardContentInHome();
       }
 
-  teacherSaveBtn.addEventListener("click", function () {
-    teacherDataRenderer();
-    showCards();
-  });
+  
