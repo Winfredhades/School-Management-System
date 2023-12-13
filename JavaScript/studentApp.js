@@ -90,3 +90,6 @@ function deleteStudent(index) {
   localStorage.setItem("studdentInfo", JSON.stringify(students));
   showCards();
 }
+
+
+showCards();

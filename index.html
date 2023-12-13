@@ -64,6 +64,52 @@
           <div class="tab-pane fade text-center m-5" id="classes" role="tabpanel" aria-labelledby="nav-profile-tab">
             <h1 class="m-5 text-start">Classes</h1>
 
+            <div class="row row-cols-1 row-cols-md-3 mt-5 justify-content-around" id="classCardPart">
+            </div>
+
+            <div class="m-4">
+              
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="classAddBtn"><img src="../images/plus-circle (1).svg" height="50px" width="50px"></button>
+
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="classAddBtn" aria-hidden="true">
+                <div class="modal-dialog text-start">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Add Class</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3 mt-1">
+                          <div class="input-group">
+                            <span class="input-group-text">Class Name</span>
+                            <input type="text" aria-label="Class Name" class="form-control classAdd" placeholder="Class Name">
+                            
+                          </div>
+                        </div>
+
+                        <div class="input-group mb-3 mt-3">
+                          <span class="input-group-text">Class Teacher</span>
+                          <input type="text" class="form-control classAdd" placeholder="Class Teacher" aria-label="Class Teacher" aria-describedby="button-addon2">
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="message-text" class="col-form-label">Description Of Class:</label>
+                          <textarea class="form-control classAdd" id="message-text"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="classSaveBtn">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
           </div>
           <!-- Classes Tab Pane End-->
           <!-- Teachers Tab Pane Start-->
@@ -219,6 +265,7 @@
     <script src="../JavaScript/renderer.js" type="module"></script>
     <script src="../JavaScript/studentApp.js" type="module"></script>
     <script type="module" src="../JavaScript/teacherApp.js"></script>
+    <script type="module" src="./JavaScript/classesTab.js"></script>
     <!-- Script Files End-->
 </body>
 </html> 
