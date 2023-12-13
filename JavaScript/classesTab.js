@@ -68,6 +68,4 @@ classSaveBtn.addEventListener("click", function() {
 })
 
 
-
-
 showCards();

@@ -35,9 +35,30 @@
           <div class="col-1">
             <ul class="nav">
             <li class="nav-item">
-              <button href="#" class="nav-link justify-content-end"><img src="../images/account_icon.png" alt="" srcset="" width="30px"></button>
+              <button href="#" class="nav-link justify-content-end" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="accountBtn"><img src="../images/account_icon.png" alt="" srcset="" width="30px"></button>
             </li>
           </ul>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="accountBtn" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="">Please Let Us Know Who You Are!</h3>
+
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                 <div class="input-group text-center">
+                  <span class="input-group-text">Name</span>
+                  <input type="text" name="" id="" placeholder="Your Name..." class="input-group-text">
+                 </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="classSaveBtn">Sign In</button>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </nav>

@@ -92,4 +92,6 @@ function deleteStudent(index) {
 }
 
 
+
+
 showCards();
