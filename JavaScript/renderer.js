@@ -1,7 +1,7 @@
 import { studentDataRenderer, showStudentCards, saveStudentBtn, deleteStudent } from "./studentApp.js";
 import { teacherDataRenderer, showTeacherCards, teacherSaveBtn, deleteTeacher } from "./teacherApp.js";
 import { classDataRenderer, showClassCards, classSaveBtn, deleteClass } from "./classesTab.js";
-import { studentCardContentInHome, teacherCardContentInHome, classCardContentInHome } from "./homeTab.js";
+import { studentCardContentInHome, teacherCardContentInHome, classCardContentInHome, signedUser, signInButton } from "./homeTab.js";
 
 
 saveStudentBtn.addEventListener("click", function() {
@@ -21,6 +21,10 @@ teacherSaveBtn.addEventListener("click", function () {
     showClassCards()
     classCardContentInHome()
   })
+signInButton.addEventListener("click", signedUser)
+
+
+
 
 studentCardContentInHome()
 teacherCardContentInHome();

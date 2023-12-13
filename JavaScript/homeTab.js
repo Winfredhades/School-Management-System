@@ -20,5 +20,11 @@ export const classCardContentInHome = () => {
     content.textContent = `${lengthOfClasses}`;
 }
 
+export const signedUser = () => {
+const signedUserName = document.getElementById('userName');
+const salutation = document.getElementById('signedUser');
+salutation.innerText = `Welcome ${signedUserName.value}`
+}
 
+export const signInButton = document.getElementById('signInBtn')
 

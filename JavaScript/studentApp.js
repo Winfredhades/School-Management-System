@@ -20,15 +20,13 @@ export const studentDataRenderer = () => {
 
 const getStudentDataFromLocalStorage = () => {
   let studentData = JSON.parse(localStorage.getItem("studdentInfo"));
-  // console.log(studentData);
-  // console.log(students);
   if(studentData != null){
     students.length = 0;
     students.push(...studentData);
   }
 }
 
-// Create New Cart;
+
 
 
 
@@ -39,7 +37,7 @@ export const showStudentCards = () => {
       <div class="card" style="width: 18rem;">
         <div class="card-body text-start">
           <button class="btn offset-10 d-inline-flex border-0 studentDeleteButton" data-index="${index}">
-            <img src="../images/dash-circle.svg" alt="" srcset="">
+            <img src="./images/dash-circle.svg" alt="" srcset="">
           </button>
           <h5 class="card-title" id="indexHint">${student.name} ${student.surName}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">${student.course}</h6><br>
@@ -49,7 +47,7 @@ export const showStudentCards = () => {
       </div>`;
   }).join("");
 
-  // Attach event listener to all delete buttons
+  
   const deleteButtons = document.querySelectorAll('.studentDeleteButton');
   deleteButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -60,8 +58,6 @@ export const showStudentCards = () => {
 }
 
 export const saveStudentBtn = document.getElementById('studentSaveBtn');
-
-export const studentTab = document.getElementById('nav-students-tab');
 
 export function deleteStudent(index) {
   students.splice(index, 1);
